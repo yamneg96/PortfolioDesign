@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+body{
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-family: "Inria Sans", sans-serif;
+}
+
+main > h1{
+  margin: 30px 0;
+}
+
+main .container{
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  margin: auto;
+}
+
+main .container .left-column{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 445px;
+  height: 600px;
+}
+
+main .container h3{
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+main .container .card{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  height: 120px;
+  width: 445px;
+  border-top: solid black 4px;
+  border-left: solid black 4px;
+  border-right: solid black 4px;
+}
+
+main .container .card:last-child{
+  border-bottom: solid black 4px;
+}
+
+main .container .card .img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 125px;
+  height: 125px;
+  border-right: 4px solid black;
+}
+
+main .container .card img{
+  width: 62px;
+  height: 80px;
+  border-radius: 20px;
+}
+
+main .container .card p{
+  font-size: 1.5em;
+  margin-left: 20px;
+}
+
+main .container .right-column{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 580px;
+  height: 655px;
+}
+
+main .container .right-column p{
+  font-size: 1.5rem;
+  margin: 10px;
+  color: gray;
+}
+
+main .container .right-column .audio{
+  display: flex;
+  font-size: .9rem;
+  width: 100%;
+  justify-content: start;
+  margin-top: 20px;
+  gap: 20px;
+  align-items: center;
+}
+
+main .container .right-column .audio audio{
+  width: 40%;
+}
+
+main .container .right-column .highlight{
+  display: flex;
+  font-size: .9rem;
+  width: 100%;
+  justify-content: start;
+  margin-top: 20px;
+  gap: 20px;
+  align-items: center;
+}
+main .container .right-column .highlight img{
+  width: 76px;
+  height: 80px;
+  border-radius: 20px;
+}
+
+main .container .right-column h4{
+  font-size: 1.5em;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+footer{
+  margin-top: 0;
+}

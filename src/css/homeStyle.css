@@ -4,12 +4,12 @@ body {
   padding: 0;
   margin: 0;
   background-image: linear-gradient(#ffffff, #999999);
- 
+  font-family: "Inria Sans", sans-serif;
 }
 
 main{
   height: auto;
-  font-family: "Inria Sans", sans-serif;
+ 
 
 }
 
