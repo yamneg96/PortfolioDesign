@@ -3,14 +3,10 @@
 body {
   padding: 0;
   margin: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
   background-image: linear-gradient(#ffffff, #999999);
   font-family: "Inria Sans", sans-serif;
-}
-
-main{
   height: auto;
- 
-
 }
 
 header {
@@ -23,19 +19,42 @@ header {
   border: black 1px solid;
   color: black;
   border-radius: 10px;
+  position: relative; /* Position relative for absolute child elements */
+}
+
+.nav-menu-hidden {
+  display: none;
+  position: absolute; /* Position it absolutely */
+  top: 45px; /* Adjust according to your layout */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  background-color: #d9d9d9; /* Same as header */
+  border: black 1px solid;
+  border-radius: 0 0 10px 10px; /* Rounded corners */
+  z-index: 1000; /* Ensure it appears above other content */
+  padding: 0; /* Add padding for items */
+}
+
+.nav-menu-hidden li {
+  width: auto; /* Full width for list items */
+  margin: 5px 0 0 0; /* Space between items */
+  padding: 10px;
+  border-bottom: #ffffff 1px solid;
+  text-align: center; /* Center text */
 }
 
 nav {
   display: flex;
   align-items: center;
-  
   width: 100%;
   margin: 0;
 }
+
 header nav .logo {
   font-size: 2rem;
   width: 27.3%;
 }
+
 header nav ul {
   display: flex;
   list-style: none;
@@ -69,114 +88,100 @@ header nav .menu-container .dropdown-btn {
   margin-left: 5px;
 }
 
-header nav .menu-container .dropdown-btn span.arrow{
-  font-size: 1.5em;
+header nav .nav-menu-hidden{
+  display: none;
 }
 
-.hero{
+.hero {
   margin: auto;
   margin-top: 100px;
-
 }
 
-.hero .hero-content{
+.hero .hero-content {
   margin: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 1200px;
-  height: 400px;
+  flex-wrap: nowrap; /* Keep items inline on desktop */
+  width: 100%;
+  max-width: 1200px; /* Maintain a maximum width */
 }
+
 .hero .hero-content .photo-frame {
   width: 30%;
   padding: 0;
-  margin-right: auto;
+  margin-right: 20px; /* Add some space between image and text */
 }
 
-.hero .hero-content .photo-frame img{
-  width: 400px;
-  height: 400px;
+.hero .hero-content .photo-frame img {
+  width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
   border-radius: 0 50px 0 0;
   background-size: cover;
   background-position: center;
   margin: 0;
 }
 
+.hero .hero-content .hero-text {
+  max-width: 60%; /* Limit the width of the text */
+}
 
-.hero .hero-content .hero-text h1{
-  width: 670px;
-  height: 124px;
+.hero .hero-content .hero-text h1 {
   font-size: 3.5em;
 }
 
-.hero .hero-content .hero-text p{
-  width: 670px;
-  height: 43px;
+.hero .hero-content .hero-text p {
   font-size: 1.5em;
   color: #878787;
   margin-bottom: 50px;
 }
-.hero .hero-content .hero-text .hero-buttons{
+
+.hero .hero-content .hero-text .hero-buttons {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
-  width: 670px;
-  margin-bottom: 0;
-  justify-self: end;
-  margin-bottom: 0;
+  width: 100%;
 }
+
 .hero .hero-content .hero-text .hero-buttons a{
-  width: 185px;
-  height: 65px;
-  background-color: #636363;
-  color: white;
   text-decoration: none;
-  border: 3px solid white;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0;
+  color: white;
+  background-color: #282828;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid white;
+  font-size: 1.3rem;
 }
 
-.hero .hero-content .hero-text .hero-buttons a:hover{
-  background-color: #4d4d4d;
-}
-
-.hero .hero-content .hero-text .hero-buttons a i{
-  margin-right: 5px;
-  font-size: 1.5em;
-}
-
-.clients{
+.clients {
   padding: 0;
   margin: auto;
   margin-top: 90px;
-  width: 1200px;
-  height: 120px;
-
+  width: 100%; /* Change to 100% */
+  max-width: 1200px; /* Maintain max width */
 }
 
-.clients h2{
+.clients h2 {
   margin-top: 0;
+  text-align: center; /* Center text for better appearance */
 }
-.clients .logos{
+
+.clients .logos {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
-.clients .logos div{
+.clients .logos div {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  margin: 10px; /* Add gap between logos */
 }
 
-.clients .logos img{
+.clients .logos img {
   width: 70px;
   height: 70px;
   border-radius: 40%;
@@ -184,8 +189,90 @@ header nav .menu-container .dropdown-btn span.arrow{
   background-position: center;
 }
 
-footer{
+footer {
   margin-top: 77px;
   padding: 5px;
   text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 1250px) {
+
+  header{
+    justify-content: space-around; /* Align logo and dropdown button */
+    max-width: 70%;
+  }
+  header nav .nav-menu{
+    display: none;
+  }
+  header nav .nav-menu-hidden{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+
+
+
+
+  header nav .logo {
+    width: 100%; /* Full width for mobile */
+  }
+
+  header nav .menu-container .dropdown-btn {
+    display: block; /* Show dropdown button */
+  }
+
+  .hero .hero-content {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+  }
+
+  .hero .hero-content .photo-frame {
+    width: 100%; /* Full width for mobile */
+    max-width: 400px; /* Maintain a maximum width */
+    margin-bottom: 20px; /* Add space below image */
+  }
+
+  .hero .hero-content .hero-text {
+    text-align: center; /* Center text for mobile */
+    max-width: 70%; /* Allow full width */
+  }
+
+  .clients .logos {
+    flex-direction: column; /* Stack logos vertically for smaller screens */
+    align-items: center; /* Center logos */
+  }
+}
+
+/* Additional Media Queries */
+@media (max-width: 768px) { /* Tablet Portrait */
+  header nav ul {
+    display: none; /* Hide the nav menu */
+  }
+
+  .hero .hero-content .photo-frame {
+    margin-bottom: 15px; /* Add space below image */
+  }
+}
+
+@media (max-width: 480px) { /* Mobile */
+  header .logo {
+    font-size: 1.5rem;
+  }
+
+  .hero .hero-content .hero-text h1 {
+    font-size: 2.5em; /* Reduce font size */
+  }
+
+  .hero .hero-content .hero-text p {
+    font-size: 1.2em; /* Reduce font size */
+  }
+}
+
+@media screen and (max-width: 550px){
+  header .navbar .logo{
+    font-size: 1.5rem;
+  }
+  
 }
